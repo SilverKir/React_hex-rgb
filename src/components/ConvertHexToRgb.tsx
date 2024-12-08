@@ -50,7 +50,6 @@ export const ConvertHexToRgb = () => {
                     onChange={handleChange} />
                 <div className='rgb-input' >{form.rgb}</div>
             </form>
-
         </div>
     )
 }
