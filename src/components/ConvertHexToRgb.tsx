@@ -1,6 +1,8 @@
 import React from 'react'
 import ParseToRgb from '../utils/ParseToRgb';
 
+import classes from './ConvertHexToRgb.module.css';
+
 export const ConvertHexToRgb = () => {
     const [form, setForm] = React.useState({
         hex: '#',
@@ -42,14 +44,14 @@ export const ConvertHexToRgb = () => {
     }
 
     return (
-        <div className='container'>
-            <form onSubmit={handleSubmit}>
+        <div className={classes['container']}>
+            <form className={classes['main-form']} onSubmit={handleSubmit}>
                 <label htmlFor="hex"></label>
-                <input type="text" id="hex" name="hex"
+                <input type="text" id="hex" name="hex" className={classes['hex-input']}
                     value={form.hex}
                     onChange={handleChange} />
-                <div className='rgb-input' >{form.rgb}</div>
             </form>
+            <div className={classes['rgb-input']} >{form.rgb}</div>
         </div>
     )
 }
